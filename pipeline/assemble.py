@@ -56,7 +56,7 @@ def build(cfg: Config, master, narr_dir, scene_dir, workdir, out_path):
         out = f"[v{i}]"
         fc.append(f"{prev}[{i}:v]xfade=transition=fade:duration={fade}:offset={off:.3f}{out}")
         prev = out
-    fc.append(f"{prev},format=yuv420p[vout]")
+    fc.append(f"{prev}format=yuv420p[vout]")
     prev = "[vout]"
     total = cum[-1] - (len(master) - 1) * fade
 
