@@ -18,7 +18,11 @@ def _load_dotenv(path=".env"):
 
 @dataclass
 class Config:
-    image_backend: str = "seedream"          # seedream | openai
+    image_backend: str = "seedream"          # seedream | openai | pollinations | higgsfield
+    higgsfield_model: str = "nano_banana_pro"  # Nano Banana (Gemini 2.5 Flash Image)
+    higgsfield_mcp_config: str = ""
+    higgsfield_node: str = ""
+    higgsfield_cli: str = ""
     seedream_app_id: str = ""
     seedream_app_key: str = ""
     seedream_endpoint: str = "https://autoglm-api.autoglm.ai/agentdr/v1/assistant/skills/generate-image-seedream"
@@ -60,6 +64,10 @@ def load_config() -> Config:
     e = os.environ.get
     return Config(
         image_backend=e("IMAGE_BACKEND", "seedream"),
+        higgsfield_model=e("HIGGSFIELD_MODEL", "nano_banana_pro"),
+        higgsfield_mcp_config=e("HIGGSFIELD_MCP_CONFIG", ""),
+        higgsfield_node=e("HIGGSFIELD_NODE", ""),
+        higgsfield_cli=e("HIGGSFIELD_CLI", ""),
         seedream_app_id=e("SEEDREAM_APP_ID", ""),
         seedream_app_key=e("SEEDREAM_APP_KEY", ""),
         seedream_endpoint=e("SEEDREAM_ENDPOINT", Config.seedream_endpoint),

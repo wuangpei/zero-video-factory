@@ -45,7 +45,9 @@ def main():
                 labels.add_label(cfg, lab, b["label"], lab)
             continue
         raw = os.path.join(args.workdir, "scenes", f"raw{b['id']}.jpg")
-        images.generate_image(cfg, b["prompt"], raw)
+        # backend ưu tiên: cảnh "high quality" (intro/outro) dùng Nano Banana, còn lại Seedream
+        backend = "higgsfield" if (b.get("quality") == "high" or b.get("kind") in ("intro", "outro")) else None
+        images.generate_image(cfg, b["prompt"], raw, backend=backend)
         if b.get("label"):
             labels.add_label(cfg, raw, b["label"], lab)
         else:
