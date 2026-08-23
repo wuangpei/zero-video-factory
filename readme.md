@@ -1,5 +1,8 @@
 # Zero-Cost Video Factory
 
+[![CI](https://github.com/wuangpei/zero-video-factory/actions/workflows/ci.yml/badge.svg)](https://github.com/wuangpei/zero-video-factory/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Turn a topic into a finished narrated video — images, voice-over, background music, captions and assembly — **for $0**, using free/local tools only.
 
 Works for any language (VoiceStudio OmniVoice: 646 languages; Edge TTS: 60+). Proven on kids content (Vietnamese) and Buddhist Dhamma videos (Thai).

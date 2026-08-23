@@ -1,5 +1,8 @@
 # Zero-Cost Video Factory
 
+[![CI](https://github.com/wuangpei/zero-video-factory/actions/workflows/ci.yml/badge.svg)](https://github.com/wuangpei/zero-video-factory/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Biến một chủ đề thành video lồng tiếng hoàn chỉnh — ảnh, giọng đọc, nhạc nền, phụ đề và ghép video — **với chi phí $0**, chỉ dùng công cụ miễn phí/local.
 
 Hỗ trợ đa ngôn ngữ (VoiceStudio OmniVoice: 646 ngôn ngữ; Edge TTS: 60+). Đã kiểm chứng trên nội dung thiếu nhi (tiếng Việt) và video Phật pháp (tiếng Thái).
