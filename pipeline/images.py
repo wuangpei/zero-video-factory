@@ -53,8 +53,15 @@ def _openai_generate(cfg: Config, prompt: str, out_path: str) -> str:
                                  data=json.dumps(body).encode(), headers=headers, method="POST")
     with urllib.request.urlopen(req, timeout=600) as r:
         data = json.loads(r.read().decode())
-    url = data["data"][0]["url"]
-    urllib.request.urlretrieve(url, out_path)
+    item = data["data"][0]
+    if "url" in item and item["url"]:
+        urllib.request.urlretrieve(item["url"], out_path)
+    elif "b64_json" in item and item["b64_json"]:
+        import base64
+        with open(out_path, "wb") as f:
+            f.write(base64.b64decode(item["b64_json"]))
+    else:
+        raise RuntimeError(f"No image in response: {str(data)[:300]}")
     return out_path
 
 
