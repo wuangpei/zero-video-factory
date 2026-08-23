@@ -79,6 +79,6 @@ def build(cfg: Config, master, narr_dir, scene_dir, workdir, out_path):
 
     _run(["ffmpeg", "-y"] + inputs + ["-filter_complex", ";".join(fc + fc2),
           "-map", prev, "-map", "[aout]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-          "-pix_fmt", "yuv420p", "-profile:v", "main",
+          "-pix_fmt", "yuv420p", "-profile:v", "main", "-color_range", "tv",
           "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.2f}", "-movflags", "+faststart", out_path])
     return out_path, total
