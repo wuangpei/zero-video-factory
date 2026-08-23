@@ -27,13 +27,23 @@ def _edge(cfg: Config, text: str, out_path: str) -> str:
     except ImportError:
         raise RuntimeError("edge-tts not installed. Run: pip install edge-tts")
     import asyncio
+    import random
 
     async def _run():
         tts = edge_tts.Communicate(text, cfg.edge_voice, rate=cfg.edge_rate)
         await tts.save(out_path)
 
-    asyncio.run(_run())
-    return out_path
+    last = None
+    for attempt in range(6):  # Microsoft endpoint is flaky; retry with backoff
+        try:
+            asyncio.run(_run())
+            return out_path
+        except Exception as e:  # noqa: BLE001
+            last = e
+            if os.path.exists(out_path):
+                os.remove(out_path)
+            asyncio.run(asyncio.sleep(2 + random.uniform(0, 2)))
+    raise RuntimeError(f"Edge TTS failed after retries: {last}")
 
 
 def synthesize(cfg: Config, text: str, out_path: str) -> str:
