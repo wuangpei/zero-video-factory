@@ -1,0 +1,6 @@
+[
+  {"id": 1, "kind": "scene", "prompt": "Sunny green park with colorful balloons floating into a blue sky, cute cartoon style for kids, children's book illustration, 16:9, no text", "label": "BÓNG BAY VUI NHỘN", "narration": "Các bạn nhỏ ơi, hôm nay chúng mình cùng học màu sắc với những quả bóng bay thật đẹp nhé!", "zoom": "in"},
+  {"id": 2, "kind": "scene", "prompt": "One big red balloon floating in a sunny park, cute cartoon style, children's book illustration, 16:9, no text", "label": "ĐỎ", "narration": "Đây là quả bóng màu đỏ, đỏ như quả táo chín!", "zoom": "out"},
+  {"id": 3, "kind": "scene", "prompt": "One big blue balloon against a bright blue sky, cute cartoon style, children's book illustration, 16:9, no text", "label": "XANH DƯƠNG", "narration": "Còn đây là quả bóng màu xanh dương, xanh như bầu trời!", "zoom": "in"},
+  {"id": 4, "kind": "outro", "prompt": "Colorful balloons floating together in a bright sky over a happy park, confetti, cute cartoon style, 16:9, no text", "label": "HẸN GẶP LẠI!", "narration": "Đỏ, xanh dương, vàng! Năm màu sắc thật vui! Hẹn gặp lại các bạn nhé!", "zoom": "out"}
+]

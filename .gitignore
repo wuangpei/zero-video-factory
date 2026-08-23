@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+out/
+.work-*/
+scenes/
+narr/
+clip*.mp4
+music*.wav
+words.json

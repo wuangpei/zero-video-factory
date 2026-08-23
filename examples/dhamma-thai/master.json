@@ -1,0 +1,6 @@
+[
+  {"id": 1, "kind": "scene", "prompt": "Golden Buddha statue in a serene Thai temple, soft golden light rays, lotus flowers, digital painting, warm golden tones, 16:9, no text", "label": "ธรรมะ", "narration": "สวัสดีครับ เชิญทุกท่าน พักกาย พักใจ กับธรรมะก่อนนอน", "zoom": "in"},
+  {"id": 2, "kind": "scene", "prompt": "A calm lake at dawn reflecting a soft pink sky, mist, peaceful, digital painting, gentle colors, 16:9, no text", "label": "ใจสงบ", "narration": "ใจที่สงบ ย่อมพบความสุข", "zoom": "out"},
+  {"id": 3, "kind": "scene", "prompt": "A person meditating by a lotus pond at dawn, soft light, serene, digital painting, 16:9, no text", "label": "สติ", "narration": "การมีสติ คือการอยู่กับปัจจุบัน", "zoom": "in"},
+  {"id": 4, "kind": "outro", "prompt": "Golden sunset over a peaceful temple silhouette, birds flying, digital painting, warm tones, 16:9, no text", "label": "พบกันใหม่", "narration": "ขอให้ทุกท่านพบแต่ความสุข แล้วพบกันใหม่ครับ", "zoom": "out"}
+]
