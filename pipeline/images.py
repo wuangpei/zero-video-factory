@@ -65,8 +65,22 @@ def _openai_generate(cfg: Config, prompt: str, out_path: str) -> str:
     return out_path
 
 
+def _pollinations(cfg: Config, prompt: str, out_path: str) -> str:
+    """Free image API, no key needed (pollinations.ai)."""
+    import urllib.parse
+    url = "https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt)
+    url += f"?width={cfg.width}&height={cfg.height}&nologo=true"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        with open(out_path, "wb") as f:
+            f.write(r.read())
+    return out_path
+
+
 def generate_image(cfg: Config, prompt: str, out_path: str) -> str:
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     if cfg.image_backend == "openai":
         return _openai_generate(cfg, prompt, out_path)
+    if cfg.image_backend == "pollinations":
+        return _pollinations(cfg, prompt, out_path)
     return _seedream_generate(cfg, prompt, out_path)
